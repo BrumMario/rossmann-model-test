@@ -36,11 +36,10 @@ def rossmann_predict():
         # prediction
         df_response = pipeline.get_prediction( model, test_raw, df3 )
         
-        print( test_json[0].keys() )# Response( '{}', status=200, mimetype='application/json' )
-         #return df_response
+        return df_response
         
     else:
-        print( test_json[0].keys() )# Response( '{}', status=200, mimetype='application/json' )
+        return Response( '{}', status=200, mimetype='application/json' )
 
 if __name__ == '__main__':
     port = os.environ.get( 'PORT', 5000 )
